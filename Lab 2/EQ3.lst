@@ -1,0 +1,186 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             RESET, DATA, READONLY
+    2 00000000                 EXPORT           __Vectors
+    3 00000000         __Vectors
+    4 00000000 40001000        DCD              0x40001000
+    5 00000004 00000000        DCD              Reset_Handler
+    6 00000008                 ALIGN
+    7 00000008                 AREA             mycode, CODE, READONLY
+    8 00000000                 ENTRY
+    9 00000000                 EXPORT           Reset_Handler
+   10 00000000         Reset_Handler
+   11 00000000 480D            LDR              R0,=N1
+   12 00000002 6801            LDR              R1,[R0]
+   13 00000004 4B0D            LDR              R3,=N2
+   14 00000006 681A            LDR              R2,[R3]
+   15 00000008 F8DF 9034       LDR              R9,=N3
+   16 0000000C F8D9 8000       LDR              R8,[R9]
+   17 00000010 428A    UP      CMP              R2,R1
+   18 00000012 D304            BCC              EXIT
+   19 00000014         
+   20 00000014 F108 0801       ADD              R8,#1
+   21 00000018 EBA2 0201       SUB              R2,R1
+   22 0000001C E7F8            B                UP
+   23 0000001E         
+   24 0000001E 4D09    EXIT    LDR              R5,=QUO
+   25 00000020 F8C5 8000       STR              R8,[R5]
+   26 00000024 4E08            LDR              R6,=REM
+   27 00000026 6032            STR              R2,[R6]
+   28 00000028 E7FE    STOP    B                STOP
+   29 0000002A 00 00 00000009 
+                       N1      DCD              9
+   30 00000030 0000002B 
+                       N2      DCD              43
+   31 00000034 00000000 
+                       N3      DCD              0
+   32 00000038 00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000         AREA             data,DATA,READWRITE
+   33 00000000 00000000 
+                       QUO     DCD              0
+   34 00000004 00000000 
+                       REM     DCD              0
+   35 00000008                 END
+Command Line: --debug --xref --cpu=Cortex-M3 --apcs=interwork --depend=EQ3.d -o
+EQ3.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -IC:\Keil\ARM\Inc\NXP\
+LPC17xx --predefine="__EVAL SETA 1" --list=EQ3.lst EQ3.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 1 in file EQ3.asm
+   Uses
+      None
+Comment: RESET unused
+__Vectors 00000000
+
+Symbol: __Vectors
+   Definitions
+      At line 3 in file EQ3.asm
+   Uses
+      At line 2 in file EQ3.asm
+Comment: __Vectors used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+EXIT 0000001E
+
+Symbol: EXIT
+   Definitions
+      At line 24 in file EQ3.asm
+   Uses
+      At line 18 in file EQ3.asm
+Comment: EXIT used once
+N1 0000002C
+
+Symbol: N1
+   Definitions
+      At line 29 in file EQ3.asm
+   Uses
+      At line 11 in file EQ3.asm
+Comment: N1 used once
+N2 00000030
+
+Symbol: N2
+   Definitions
+      At line 30 in file EQ3.asm
+   Uses
+      At line 13 in file EQ3.asm
+Comment: N2 used once
+N3 00000034
+
+Symbol: N3
+   Definitions
+      At line 31 in file EQ3.asm
+   Uses
+      At line 15 in file EQ3.asm
+Comment: N3 used once
+Reset_Handler 00000000
+
+Symbol: Reset_Handler
+   Definitions
+      At line 10 in file EQ3.asm
+   Uses
+      At line 5 in file EQ3.asm
+      At line 9 in file EQ3.asm
+
+STOP 00000028
+
+Symbol: STOP
+   Definitions
+      At line 28 in file EQ3.asm
+   Uses
+      At line 28 in file EQ3.asm
+Comment: STOP used once
+UP 00000010
+
+Symbol: UP
+   Definitions
+      At line 17 in file EQ3.asm
+   Uses
+      At line 22 in file EQ3.asm
+Comment: UP used once
+mycode 00000000
+
+
+
+
+ARM Macro Assembler    Page 2 Alphabetic symbol ordering
+Relocatable symbols
+
+Symbol: mycode
+   Definitions
+      At line 7 in file EQ3.asm
+   Uses
+      None
+Comment: mycode unused
+8 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+QUO 00000000
+
+Symbol: QUO
+   Definitions
+      At line 33 in file EQ3.asm
+   Uses
+      At line 24 in file EQ3.asm
+Comment: QUO used once
+REM 00000004
+
+Symbol: REM
+   Definitions
+      At line 34 in file EQ3.asm
+   Uses
+      At line 26 in file EQ3.asm
+Comment: REM used once
+data 00000000
+
+Symbol: data
+   Definitions
+      At line 32 in file EQ3.asm
+   Uses
+      None
+Comment: data unused
+3 symbols
+346 symbols in table

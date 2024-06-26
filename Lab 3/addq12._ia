@@ -1,0 +1,5 @@
+--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork 
+-I C:\Keil\ARM\RV31\INC 
+-I C:\Keil\ARM\CMSIS\Include 
+-I C:\Keil\ARM\Inc\NXP\LPC17xx 
+--list ".\addq12.lst" --xref -o ".\addq12.o" --depend ".\addq12.d" "..\Lab 1\addq12.asm"

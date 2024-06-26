@@ -1,0 +1,1 @@
+eg.o: eg.asm
